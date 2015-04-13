@@ -7,7 +7,9 @@ class Membership extends CI_Controller {
 // Load form helper library
 //$this->load->helper('form');
 // Load form validation library
+        //$this->load->helper('bootstrapped');
         $this->load->library('form_validation');
+        
 // Load session library
 //$this->load->library('session');
 // Load database
