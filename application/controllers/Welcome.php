@@ -23,6 +23,6 @@ class Welcome extends CI_Controller {
 		//$this->load->view('welcome_message');
             //$this->load->view('includes/main_content');
             $data['main_content'] = 'main_content';
-	     $this->load->view('includes/template', $data);	
+	    $this->load->view('includes/template', $data);	
 	}
 }
