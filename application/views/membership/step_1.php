@@ -43,13 +43,17 @@
 
                     </div>
                  
+                    
+                    
 
 
-                    <p>
-                        <label for="your_email">Your email <span class="required">*</span></label>
-                        <?php echo form_error('your_email'); ?>
-                        <br /><input id="your_email" type="text" name="your_email"  value="<?php echo set_value('your_email'); ?>"  />
-                    </p>
+                    <div class="form-group">
+                        <?php echo form_error('your_email'); ?><br />
+                        <label for="your_email" class="col-sm-4 control-label">Email <span class="required">*</span></label>
+                        
+         <div class="col-sm-8">               
+             <input class="form-control" id="your_email" placeholder="Email" type="text" name="your_email"  value="<?php echo set_value('your_email'); ?>"  /></div>
+                     </div>
 
 
                     <p>
