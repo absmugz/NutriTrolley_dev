@@ -10,14 +10,37 @@ class Dashboard extends Admin_Controller {
   function __construct()
   {
     parent::__construct();
-    //$this->load->library('ion_auth');
+    $this->load->library('grocery_CRUD');
   }
+  
 
     //the function that loads the first form<br><br>
     public function index() {
+        
+        
 
         $data['main_content'] = 'admin/dashboard';
+        //$data['output'] = 'test';
         $this->load->view('admin/includes/template', $data);
     }
+    
+    	public function recipes_management()
+	{
+			$crud = new grocery_CRUD();
+
+			$crud->set_table('recipes');
+			$crud->columns('name');
+			$crud->display_as('name','Recipe');
+
+        
+       
+         $output = $crud->render();
+         // load your custom view
+      $this->load->view('admin/out', $output);
+       
+
+			
+	}
+    
 }
 
