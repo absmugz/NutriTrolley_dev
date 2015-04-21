@@ -3,14 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/config/autoload.php</file>
-            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/public/js/custom.js</file>
-            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/views/includes/header.php</file>
+            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/views/admin/includes/footer.php</file>
+            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/views/example.php</file>
             <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/controllers/membership.php</file>
-            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/controllers/Welcome.php</file>
-            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/views/membership/step_1.php</file>
-            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/views/includes/footer.php</file>
-            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/views/main_content.php</file>
+            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/controllers/dashboard.php</file>
+            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/views/admin/includes/header.php</file>
+            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/core/MY_Controller.php</file>
+            <file>file:/Applications/MAMP/htdocs/nutritrolley_dev/application/controllers/examples.php</file>
         </group>
     </open-files>
 </project-private>

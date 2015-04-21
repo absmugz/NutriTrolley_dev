@@ -156,13 +156,13 @@ a:hover
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav side-nav">
                     <li>
-                        <a href='<?php echo site_url('examples/customers_management')?>'><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
+                        <a href='<?php echo site_url('examples/recipe_management')?>'><i class="fa fa-fw fa-dashboard"></i> Recipes</a>
                     </li>
                     <li>
-                        <a href='<?php echo site_url('examples/orders_management')?>'><i class="fa fa-fw fa-bar-chart-o"></i> Charts</a>
+                        <a href='<?php echo site_url('examples/orders_management')?>'><i class="fa fa-fw fa-bar-chart-o"></i> Recipe Categories</a>
                     </li>
                     <li>
-                        <a href='<?php echo site_url('examples/products_management')?>'><i class="fa fa-fw fa-table"></i> Tables</a>
+                        <a href='<?php echo site_url('examples/products_management')?>'><i class="fa fa-fw fa-table"></i> Users</a>
                     </li>
                     <li>
                         <a href='<?php echo site_url('examples/offices_management')?>'><i class="fa fa-fw fa-edit"></i> Forms</a>

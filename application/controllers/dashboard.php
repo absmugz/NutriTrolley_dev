@@ -10,7 +10,7 @@ class Dashboard extends Admin_Controller {
   function __construct()
   {
     parent::__construct();
-    $this->load->library('grocery_CRUD');
+    
   }
   
 
@@ -24,23 +24,7 @@ class Dashboard extends Admin_Controller {
         $this->load->view('admin/includes/template', $data);
     }
     
-    	public function recipes_management()
-	{
-			$crud = new grocery_CRUD();
-
-			$crud->set_table('recipes');
-			$crud->columns('name');
-			$crud->display_as('name','Recipe');
-
-        
-       
-         $output = $crud->render();
-         // load your custom view
-      $this->load->view('admin/out', $output);
-       
-
-			
-	}
+ 
     
 }
 
