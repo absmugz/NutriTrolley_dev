@@ -83,12 +83,28 @@ class Examples extends Admin_Controller {
     public function recipe_management() {
         $crud = new grocery_CRUD();
 
-
+        $crud->set_theme('twitter-bootstrap');
         $crud->set_table('recipes');
-        $crud->columns('name');
-        $crud->fields('name');
+        $crud->display_as('name', 'Recipe Name')
+             ->display_as('recipe_category','Recipes category');
+    
+        $crud->set_subject('Recipe');
+
+        
+        $crud->set_relation('recipe_category','recipes_category','name');
+        $output = $crud->render();
+
+        $this->_example_output($output);
+    }
+    
+        public function recipe_category_management() {
+        $crud = new grocery_CRUD();
+
+        $crud->set_theme('twitter-bootstrap');
+        $crud->set_table('recipes_category');
         $crud->display_as('name', 'Name');
-        $crud->set_relation('recipesID','recipes_category','name');
+    
+        $crud->set_subject('Recipes category');
 
         $output = $crud->render();
 
@@ -98,6 +114,7 @@ class Examples extends Admin_Controller {
     public function orders_management() {
         $crud = new grocery_CRUD();
 
+        $crud->set_theme('twitter-bootstrap');
         $crud->set_relation('customerNumber', 'customers', '{contactLastName} {contactFirstName}');
         $crud->display_as('customerNumber', 'Customer');
         $crud->set_table('orders');
