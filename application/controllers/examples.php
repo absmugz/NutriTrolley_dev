@@ -83,7 +83,7 @@ class Examples extends Admin_Controller {
     public function recipe_management() {
         $crud = new grocery_CRUD();
 
-        $crud->set_theme('twitter-bootstrap');
+        //$crud->set_theme('twitter-bootstrap');
         $crud->set_table('recipes');
         $crud->display_as('name', 'Recipe Name')
              ->display_as('recipe_category','Recipes category');
@@ -100,7 +100,7 @@ class Examples extends Admin_Controller {
         public function recipe_category_management() {
         $crud = new grocery_CRUD();
 
-        $crud->set_theme('twitter-bootstrap');
+        //$crud->set_theme('twitter-bootstrap');
         $crud->set_table('recipes_category');
         $crud->display_as('name', 'Name');
     

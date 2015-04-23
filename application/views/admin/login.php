@@ -1,24 +1,67 @@
-<div class="row">
-  <div class="col-lg-4 col-lg-offset-4">
-    <h1>Login</h1>
+<div class="container">
+
+ 
+            
+           
+           
+       
     <?php echo $this->session->flashdata('message');?>
-    <?php echo form_open('',array('class'=>'form-horizontal'));?>
-      <div class="form-group">
-        <?php echo form_label('Username','identity');?>
+    <?php echo form_open('',array('class'=>'form-signin'));?>
+              <h2 class="form-signin-heading center-block">Login</h2>
+     
+        <?php form_label('Username','identity');?>
         <?php echo form_error('identity');?>
-        <?php echo form_input('identity','','class="form-control"');?>
-      </div>
-      <div class="form-group">
-        <?php echo form_label('Password','password');?>
+        <?php
+        
+        $Unsername = array(
+              'name'        => 'identity',
+              'placeholder' => 'Username',
+              'class'=> 'form-control' 
+            );
+
+echo form_input($Unsername);
+
+        
+        ;?>
+   
+        <?php form_label('Password','password');?>
         <?php echo form_error('password');?>
-        <?php echo form_password('password','','class="form-control"');?>
-      </div>
-      <div class="form-group">
-        <label>
+        <?php
+         
+        $Password = array(
+              'name'        => 'password',
+              'placeholder' => 'Password',
+              'class'=> 'form-control',
+              'type'=>'password'
+            );
+
+echo form_input($Password);
+        
+                
+         ;?>
+   
+     
+              
+              <div class="checkbox">
+           <label>
           <?php echo form_checkbox('remember','1',FALSE);?> Remember me
         </label>
-      </div>
-      <?php echo form_submit('submit', 'Log in', 'class="btn btn-primary btn-lg btn-block"');?>
+                  <a href="#" class="pull-right need-help">Forgot password? </a><span class="clearfix"></span>
+        </div>
+              
+      <?php echo form_submit('submit', 'Log in', 'class="btn btn-lg btn-primary btn-block"');?>
     <?php echo form_close();?>
-  </div>
-</div>
+ 
+
+
+    </div>
+
+
+
+
+ 
+
+                
+              
+              
+         
