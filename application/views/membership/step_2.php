@@ -74,8 +74,8 @@
 
 
                     <div class="form-group">
-                        <label for="activity">activity <span class="required">*</span></label>
-                        <?php echo form_error('activity'); ?>
+                        <label for="top_activity_1">top_activity_1 <span class="required">*</span></label>
+                        <?php echo form_error('top_activity_1'); ?>
 
                         <?php // Change the values in this array to populate your dropdown as required ?>
                         <?php
@@ -85,7 +85,39 @@
                         );
                         ?>
 
-                        <br /><?php echo form_dropdown('activity', $options, set_value('activity')) ?>
+                        <br /><?php echo form_dropdown('top_activity_1', $options, set_value('top_activity_1')) ?>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="top_activity_2">top_activity_2 <span class="required">*</span></label>
+                        <?php echo form_error('top_activity_2'); ?>
+
+                        <?php // Change the values in this array to populate your dropdown as required ?>
+                        <?php
+                        $options = array(
+                            '' => 'Please Select',
+                            'example_value1' => 'example option 1'
+                        );
+                        ?>
+
+                        <br /><?php echo form_dropdown('top_activity_2', $options, set_value('top_activity_2')) ?>
+
+                    </div>
+
+                    <div class="form-group">
+                        <label for="top_activity_3">top_activity_3 <span class="required">*</span></label>
+                        <?php echo form_error('top_activity_3'); ?>
+
+                        <?php // Change the values in this array to populate your dropdown as required ?>
+                        <?php
+                        $options = array(
+                            '' => 'Please Select',
+                            'example_value1' => 'example option 1'
+                        );
+                        ?>
+
+                        <br /><?php echo form_dropdown('top_activity_3', $options, set_value('top_activity_3')) ?>
 
                     </div>
 

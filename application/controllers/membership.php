@@ -53,31 +53,37 @@ class Membership extends CI_Controller {
         $this->form_validation->set_rules('height', 'Height', 'required|is_numeric');
         $this->form_validation->set_rules('my_body_fat', 'My body fat', 'required|trim|is_numeric');
         $this->form_validation->set_rules('how_active', 'How active', 'required|trim');
-        $this->form_validation->set_rules('activity', 'activity', 'required|trim');
+        //$this->form_validation->set_rules('activity', 'activity', 'required|trim');
+
+        $this->form_validation->set_rules('top_activity_1', 'top_activity_1', 'required|trim');
+        $this->form_validation->set_rules('top_activity_2', 'top_activity_2', 'required|trim');
+        $this->form_validation->set_rules('top_activity_3', 'top_activity_3', 'required|trim');
 
         $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
 
         if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
             $data['main_content'] = 'membership/step_2';
             $this->load->view('includes/template', $data);
-        }
-         else {
-             
-       $data = array(
-					       	'gender' => set_value('gender'),
-					       	'year_of_birth' => set_value('year_of_birth'),
-					       	'current_weight' => set_value('current_weight'),
-					       	'height' => set_value('height'),
-					       	'my_body_fat' => set_value('my_body_fat'),
-					       	'how_active' => set_value('how_active'),
-					       	'activity' => set_value('activity')
-						);
+        } else {
 
-        $this->session->set_userdata($data);
-        
-        
-             
-              var_dump($this->session->all_userdata());
+            $data = array(
+                'gender' => set_value('gender'),
+                'year_of_birth' => set_value('year_of_birth'),
+                'current_weight' => set_value('current_weight'),
+                'height' => set_value('height'),
+                'my_body_fat' => set_value('my_body_fat'),
+                'how_active' => set_value('how_active'),
+                //'activity' => set_value('activity')
+                'top_activity_1' => set_value('top_activity_1'),
+                'top_activity_2' => set_value('top_activity_2'),
+                'top_activity_3' => set_value('top_activity_3')
+            );
+
+            $this->session->set_userdata($data);
+
+
+
+            var_dump($this->session->all_userdata());
             $data['main_content'] = 'membership/step_3';
             $this->load->view('includes/template', $data);
         }
