@@ -91,9 +91,38 @@ class Membership extends CI_Controller {
     }
 
     public function step_4() {
-        //loads the forth form
-        $data['main_content'] = 'membership/step_4';
+        
+        $this->form_validation->set_rules('halaal', 'Halaal', 'max_length[255]');			
+		$this->form_validation->set_rules('kosher', 'Kosher', 'max_length[255]');			
+		$this->form_validation->set_rules('vegan', 'Vegan', 'max_length[255]');			
+		$this->form_validation->set_rules('vegetarian', 'Vegetarian', 'max_length[255]');
+                
+                $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
+                
+                if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
+            $data['main_content'] = 'membership/step_3';
+            $this->load->view('includes/template', $data);
+        } else {
+
+       
+            
+            $data = array(
+					       	'halaal' => @$this->input->post('halaal'),
+					       	'kosher' => @$this->input->post('kosher'),
+					       	'vegan' => @$this->input->post('vegan'),
+					       	'vegetarian' => @$this->input->post('vegetarian')
+						);
+
+            $this->session->set_userdata($data);
+
+
+
+            var_dump($this->session->all_userdata());
+           $data['main_content'] = 'membership/step_4';
         $this->load->view('includes/template', $data);
+        }
+        //loads the forth form
+        
     }
 
     public function step_5() {
