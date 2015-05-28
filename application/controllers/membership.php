@@ -9,7 +9,7 @@ class Membership extends CI_Controller {
 // Load form validation library
         //$this->load->helper('bootstrapped');
         $this->load->library('form_validation');
-        
+
 // Load session library
 //$this->load->library('session');
 // Load database
@@ -27,7 +27,18 @@ class Membership extends CI_Controller {
     public function step_2() {
         //load your model here and a method to save these items
         //redirect to the same controller but the second method that loads the second form
-        //var_dump($data);
+
+        $data = array(
+            'first_name' => $this->input->post('first_name'),
+            'surname' => $this->input->post('surname'),
+            'username' => $this->input->post('username')
+        );
+
+        $this->session->set_userdata($data);
+
+        //$this->load->view('sales/new_blank_order_lines', $this->session->all_userdata());
+
+        var_dump($this->session->all_userdata());
         //loads the second form
         $data['main_content'] = 'membership/step_2';
         $this->load->view('includes/template', $data);
@@ -35,10 +46,42 @@ class Membership extends CI_Controller {
 
 //function that loads form2
     public function step_3() {
+        $this->form_validation->set_rules('gender', 'gender', 'required|trim');
+        //$this->form_validation->set_rules('year_of_birth', 'Year of birth', 'required|trim|is_numeric');
+        $this->form_validation->set_rules('year_of_birth', 'Year of birth', 'required|trim');
+        $this->form_validation->set_rules('current_weight', 'Current weight', 'required|trim|is_numeric');
+        $this->form_validation->set_rules('height', 'Height', 'required|is_numeric');
+        $this->form_validation->set_rules('my_body_fat', 'My body fat', 'required|trim|is_numeric');
+        $this->form_validation->set_rules('how_active', 'How active', 'required|trim');
+        $this->form_validation->set_rules('activity', 'activity', 'required|trim');
 
+        $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
+
+        if ($this->form_validation->run() == FALSE) { // validation hasn't been passed
+            $data['main_content'] = 'membership/step_2';
+            $this->load->view('includes/template', $data);
+        }
+         else {
+             
+       $data = array(
+					       	'gender' => set_value('gender'),
+					       	'year_of_birth' => set_value('year_of_birth'),
+					       	'current_weight' => set_value('current_weight'),
+					       	'height' => set_value('height'),
+					       	'my_body_fat' => set_value('my_body_fat'),
+					       	'how_active' => set_value('how_active'),
+					       	'activity' => set_value('activity')
+						);
+
+        $this->session->set_userdata($data);
+        
+        
+             
+              var_dump($this->session->all_userdata());
+            $data['main_content'] = 'membership/step_3';
+            $this->load->view('includes/template', $data);
+        }
         //loads the third form
-        $data['main_content'] = 'membership/step_3';
-        $this->load->view('includes/template', $data);
     }
 
     public function step_4() {
