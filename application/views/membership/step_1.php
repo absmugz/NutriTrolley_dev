@@ -3,9 +3,11 @@
     <div class="row">
         <div class="col-md-12">
             <h1>Step 1</h1>
-            <?php echo form_open("membership/step_2", 'class="form-horizontal"'); ?>
+            <?php echo form_open_multipart("membership/step_2", 'class="form-horizontal"'); ?>
             <div class="row">
-                <div class="col-sm-2">Profile pic</div>
+                <div class="col-sm-2">
+<input type="file" name="userfile" size="20" />
+                </div>
 
                 <div class="col-sm-6">
                     <div class="form-group">
