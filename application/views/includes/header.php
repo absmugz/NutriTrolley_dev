@@ -14,6 +14,8 @@
 <link rel="stylesheet" href="<?php echo base_url("public/fancybox/source/helpers/jquery.fancybox-thumbs.css?v=1.0.7"); ?>" type="text/css" media="screen" />
 
 
+<!-- Add Select box -->
+<link rel="stylesheet" href="<?php echo base_url("public/css/bootstrap-select.css"); ?>">
 
 <body>
 

@@ -16,6 +16,8 @@ $(document).ready(function() {
 		openEffect	: 'none',
 		closeEffect	: 'none'
 	});
+        
+        $('.selectpicker').selectpicker();
 });
 
 
