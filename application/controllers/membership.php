@@ -28,13 +28,16 @@ class Membership extends CI_Controller {
         //load your model here and a method to save these items
         //redirect to the same controller but the second method that loads the second form
    
+  /*
   
         $this->form_validation->set_rules('first_name', 'First name', 'required|max_length[255]');
-        $this->form_validation->set_rules('surname', 'Surname', 'required|trim|max_length[255]');
-        $this->form_validation->set_rules('username', 'Username', 'required|trim|max_length[255]');
-        $this->form_validation->set_rules('password', 'Password', 'required|trim|max_length[255]');
+        //$this->form_validation->set_rules('surname', 'Surname', 'required|trim|max_length[255]');
+        //$this->form_validation->set_rules('username', 'Username', 'required|trim|max_length[255]');
+        //$this->form_validation->set_rules('password', 'Password', 'required|trim|max_length[255]');
+        
         //$this->form_validation->set_rules('password_confirmation', 'Password confirmation', 'required|trim|max_length[255]');
-        $this->form_validation->set_rules('your_email', 'Your email', 'required|trim|valid_email|max_length[255]');
+        
+        //$this->form_validation->set_rules('your_email', 'Your email', 'required|trim|valid_email|max_length[255]');
 
         $this->form_validation->set_error_delimiters('<br /><span class="error">', '</span>');
 
@@ -42,6 +45,7 @@ class Membership extends CI_Controller {
             $data['main_content'] = 'membership/step_1';
             $this->load->view('includes/template', $data);
         } else {
+      
 
             $data = array(
                 //'profile_picture' => @$this->profile_picture,
@@ -58,11 +62,30 @@ class Membership extends CI_Controller {
             
 
 
-            var_dump($this->session->all_userdata());
+            //var_dump($this->session->all_userdata());
             //loads the second form
-            $data['main_content'] = 'membership/step_3';
+            $data['main_content'] = 'membership/step_2';
             $this->load->view('includes/template', $data);
-        }
+        }*/
+       $data = array(
+                //'profile_picture' => @$this->profile_picture,
+                'first_name' => set_value('first_name'),
+                'surname' => set_value('surname'),
+                'username' => set_value('username'),
+                'password' => set_value('password'),
+                //'password_confirmation' => set_value('password_confirmation'),
+                'your_email' => set_value('your_email')
+            );
+
+            $this->session->set_userdata($data);
+
+            
+
+
+            //var_dump($this->session->all_userdata());
+            //loads the second form
+            $data['main_content'] = 'membership/step_2';
+            $this->load->view('includes/template', $data); 
     }
     
     
@@ -71,6 +94,7 @@ class Membership extends CI_Controller {
 
 //function that loads form2
     public function step_3() {
+        /*
         $this->form_validation->set_rules('gender', 'gender', 'required|trim');
         //$this->form_validation->set_rules('year_of_birth', 'Year of birth', 'required|trim|is_numeric');
         $this->form_validation->set_rules('year_of_birth', 'Year of birth', 'required|trim');
@@ -113,10 +137,19 @@ class Membership extends CI_Controller {
             $this->load->view('includes/template', $data);
         }
         //loads the third form
+         * 
+         */
+
+
+
+
+            //var_dump($this->session->all_userdata());
+            $data['main_content'] = 'membership/step_3';
+            $this->load->view('includes/template', $data);
     }
 
     public function step_4() {
-
+/*
         $this->form_validation->set_rules('halaal', 'Halaal', 'max_length[255]');
         $this->form_validation->set_rules('kosher', 'Kosher', 'max_length[255]');
         $this->form_validation->set_rules('vegan', 'Vegan', 'max_length[255]');
@@ -146,7 +179,12 @@ class Membership extends CI_Controller {
             $data['main_content'] = 'membership/step_4';
             $this->load->view('includes/template', $data);
         }
+ * 
+ */
         //loads the forth form
+        
+       $data['main_content'] = 'membership/step_4';
+            $this->load->view('includes/template', $data);
     }
 
     public function step_5() {

@@ -209,13 +209,22 @@ and open the template in the editor.
     color: #fff;
     height: 30px;
     margin-top: -5px;
+     margin-bottom:10px;
 }
 
 #membership_bottom {
     background-color: #c9d22a;
     color: #fff;
-    height: 30px;
+    height: 100%;
     margin-top: -5px;
+}
+
+.reg-btn {
+    margin: 5px;
+}
+
+.reg-button-container {
+    margin-right: 5px;  
 }
 	
 #my_acc_details span {
@@ -226,10 +235,35 @@ and open the template in the editor.
     position: absolute;
 }
 
+.bootstrap-select > .dropdown-toggle {
+    height: 24px !important;
+}
+
+.bootstrap-select.btn-group .dropdown-toggle .filter-option {
+
+    font-size: 12px !important;
+     margin-top: -3px !important;
+}
+
+div.form-group.form-group-membership span.error {
+    color: red;
+    font-size: 12px !important;
+    margin-left: 160px;
+}
+
 
 #already_have_a_acc {
 	
     height: 30px;
+   
+}
+
+.bootstrap-select.btn-group .dropdown-menu {
+    
+    font-size: 12px !important;
+    top: 70% !important;
+     margin:0 !important;
+    padding:0 !important;
    
 }
 
@@ -242,9 +276,17 @@ and open the template in the editor.
 }
 
 #already_have_a_acc a {
-    left: 27%;
+    left: 28%;
     position: absolute;
     top: 5px;
+}
+
+
+
+div#my_acc_details span span {
+    font-size: 12px !important;
+    position: relative;
+    
 }
 
 .reg_left {
@@ -276,9 +318,36 @@ and open the template in the editor.
 }
 
 
+label.checkbox-inline {
+  margin-bottom:15px !important;
+    
+}
 
 
 
+.sign_up_container h3 {
+    color: #c9d22a;
+    font-size: 18px;
+    font-weight: 700;
+    
+}
+
+.sign_up_container h4 {
+
+    font-size: 14px;
+    font-weight: 700;
+    
+}
+
+td.vcenter {
+    vertical-align: middle;
+    text-align:center;
+}
+
+table.table.table-striped tbody tr td div.checkbox {
+    vertical-align: middle;
+    text-align:center;
+}
 
 
 

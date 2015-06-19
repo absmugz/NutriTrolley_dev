@@ -173,9 +173,8 @@
                         <div id="membership_bottom">
                             
                             <div class="row">
-  <div class="col-xs-8"></div>
-  <div class="col-xs-2"> <?php echo anchor('#', 'Cancel', 'class="btn btn-default" title="Home"' ); ?></div>
-  <div class="col-xs-2"><?php echo form_submit('submit', 'Next', 'class="btn btn-success"'); ?></div>
+                                <div class="col-xs-12"><div class="pull-right reg-button-container"><?php echo anchor('#', 'Cancel', 'class="btn btn-default reg-btn" title="Home"' ); ?><?php echo form_submit('submit', 'Next', 'class="btn btn-success"'); ?></div></div>
+
 </div>
                          </div>
                     </div>
