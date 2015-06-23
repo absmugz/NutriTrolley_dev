@@ -2,6 +2,9 @@
 <script type="text/javascript" src="<?php echo base_url("public/js/jquery.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("public/js/bootstrap.js"); ?>"></script>
 
+<script type="text/javascript" src="<?php echo base_url("public/js/ajaxfileupload.js"); ?>"></script>
+
+
 <script src='https://www.google.com/recaptcha/api.js'></script>
 <!-- Select box -->
 <script type="text/javascript" src="<?php echo base_url("public/js/bootstrap-select.js"); ?>"></script>
