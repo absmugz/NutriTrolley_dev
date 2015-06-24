@@ -7,6 +7,8 @@
 <link rel="stylesheet" href="<?php echo base_url("public/css/style.css"); ?>">
 <!-- Add fancyBox -->
 
+  <link rel="stylesheet" href="<?php echo base_url("public/css/jquery.Jcrop.css"); ?>" />
+
 <link rel="stylesheet" href="<?php echo base_url("public/fancybox/source/jquery.fancybox.css?v=2.1.5"); ?>" type="text/css" media="screen" />
 <!-- Optionally add helpers - button, thumbnail and/or media -->
 <link rel="stylesheet" href="<?php echo base_url("public/fancybox/source/helpers/jquery.fancybox-buttons.css?v=1.0.5"); ?>" type="text/css" media="screen" />

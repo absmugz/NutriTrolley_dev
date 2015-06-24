@@ -1,4 +1,4 @@
-
+  <?php echo form_open_multipart("membership/step_2", 'class="form-horizontal form-horizontal-membership"'); ?>
 <div class="container">
     <div class="row">
         <div class="col-xs-12">
@@ -34,19 +34,23 @@
                         <div class="col-xs-9 reg_left">
                             <div class="row">
                                 <div class="col-xs-2">
-                                    <form method="post" action="" id="upload_file">
-                                        <label for="title">Title</label>
-                                        <input type="text" name="title" id="title" value="" />
 
-                                        <label for="userfile">File</label>
-                                        <input type="file" name="userfile" id="userfile" size="20" />
+                                    <div id="imagePreview"></div>
 
-                                        <input type="submit" name="submit" id="submit" />
-                                    </form>
-                                    <h2>Files</h2>
-                                    <div id="files"></div>
+
+
+                                   
+                                        <div class="fileUpload btn btn-primary">
+                                            <span>Upload</span>
+
+                                            <input id="uploadFile" type="file" name="image" class="upload img" />
+                                        </div>
+                                        <!-- <input type="submit" name="submit" id="submit" /> -->
+                                   
+
+
                                 </div>
-                                <?php echo form_open_multipart("membership/step_2", 'class="form-horizontal form-horizontal-membership"'); ?>
+                              
                                 <div class="col-xs-10">
                                     <div class="form-group form-group-membership">
                                         <?php echo form_error('first_name'); ?><br />

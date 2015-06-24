@@ -101,6 +101,7 @@ body{background:none;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
   <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
   <script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
   <link rel="stylesheet" href="/resources/demos/style.css" />
+  <link rel="stylesheet" href="<?php echo base_url("public/css/jquery.Jcrop.min.css"); ?>" />
   <script>
   $(function() {
     $( ".datepicker" ).datepicker({changeMonth: true,
@@ -108,6 +109,7 @@ body{background:none;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
 	changeYear: true});
   });
   </script>
+  <base href="<?=base_url();?>">
 </head>
 <body>
 
