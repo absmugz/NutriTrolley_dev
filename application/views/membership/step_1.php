@@ -33,25 +33,16 @@
                     <div class="row">
                         <div class="col-xs-9 reg_left">
                             <div class="row">
-                                <div class="col-xs-2">
-
-                                    <div id="imagePreview"></div>
-
-
+                                <div class="col-xs-4">
 
                                    
-                                        <div class="fileUpload btn btn-primary">
-                                            <span>Upload</span>
-
-                                            <input id="uploadFile" type="file" name="image" class="upload img" />
-                                        </div>
-                                        <!-- <input type="submit" name="submit" id="submit" /> -->
-                                   
-
-
+<div class="dropzone" data-width="200" data-height="200" data-resize="true" data-ghost="false"  data-ajax="false" style="width: 100%;">
+  <input type="file" name="thumb" />
+</div>
+ 
                                 </div>
                               
-                                <div class="col-xs-10">
+                                <div class="col-xs-8">
                                     <div class="form-group form-group-membership">
                                         <?php echo form_error('first_name'); ?><br />
                                         <label for="first_name" class="col-xs-4 control-label control-label-membership">First name <span class="required">*</span></label>

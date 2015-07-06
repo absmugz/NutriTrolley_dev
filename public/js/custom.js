@@ -33,8 +33,9 @@ $(document).ready(function() {
 	});
         
 
+$('.dropzone').html5imageupload();
         
-         $('#uploadPreview1').Jcrop();
+         $('#uploadFile').Jcrop();
         
         $('.selectpicker').selectpicker();
         

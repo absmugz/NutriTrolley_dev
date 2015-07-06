@@ -2,7 +2,7 @@
 <script type="text/javascript" src="<?php echo base_url("public/js/jquery.js"); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url("public/js/bootstrap.js"); ?>"></script>
 
-<script type="text/javascript" src="<?php echo base_url("public/js/ajaxfileupload.js"); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url("public/js/html5imageupload.min.js"); ?>"></script>
 
 <script type="text/javascript" src="<?php echo base_url("public/js/jquery.Jcrop.min.js"); ?>"></script>
 
