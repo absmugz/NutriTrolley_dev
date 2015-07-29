@@ -32,8 +32,13 @@ $(document).ready(function() {
 		closeEffect	: 'none'
 	});
         
-
-$('.dropzone').html5imageupload();
+console.log("testing if the abs has done it");
+$('.dropzone').html5imageupload({
+	onAfterProcessImage: function() {
+		//console.log($('.main').attr('src'));
+                console.log($('.final').val());
+	}
+});
         
          $('#uploadFile').Jcrop();
         
