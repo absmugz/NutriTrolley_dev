@@ -1,4 +1,5 @@
 <?php
+/*
 class Thumbnailcrop_model extends CI_Model {
 	function __construct()
 	{
@@ -13,5 +14,9 @@ class Thumbnailcrop_model extends CI_Model {
 		}
 		return FALSE;
 	}
+}*/
+
+class Thumbnailcrop_model extends MY_Model { 
+    public $_table = 'thumbnailcrop_table';
 }
 ?>
