@@ -9,6 +9,7 @@ class Membership extends CI_Controller {
 // Load form validation library
         //$this->load->helper('bootstrapped');
         $this->load->library('form_validation');
+        //$this->load->library('ion_auth');
 
 // Load session library
 //$this->load->library('session');
@@ -67,6 +68,42 @@ class Membership extends CI_Controller {
             $data['main_content'] = 'membership/step_2';
             $this->load->view('includes/template', $data);
         }*/
+        
+$username = $this->input->post('username');
+$password = $this->input->post('password');
+$email = $this->input->post('your_email');
+		$additional_data = array(
+								'first_name' => $this->input->post('first_name'),
+								'last_name' => $this->input->post('surname'),
+								);
+$group = array('2'); // Sets user to admin. No need for array('1', '2') as user is always set to member by default
+
+//$this->ion_auth->register($username, $password, $email, $additional_data, $group);
+
+if ($this->ion_auth->register($username, $password, $email, $additional_data, $group))
+{
+    $messages = $this->ion_auth->messages();
+    $user = $this->ion_auth->user()->row();
+    $user_id = $user->id;
+    //echo $messages;
+    //var_dump($messages);die();
+    var_dump($user_id);die();
+}
+else
+{
+    $errors = $this->ion_auth->errors();
+    //echo $errors;
+     var_dump($errors);die();
+}
+
+//$user = $this->ion_auth->user()->row();
+//$user_id = $user->id;
+
+//$id = $this->ion_auth->register($username, $password, $email, $additional_data, $group);
+
+//var_dump($user_id);die();
+
+                
        $data = array(
                 //'profile_picture' => @$this->profile_picture,
                 'first_name' => set_value('first_name'),
