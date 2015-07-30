@@ -75,7 +75,9 @@ $this->load->model('thumbnailcrop_model', 'thumbnailcrop');
         
 $error					= false;
 
-$absolutedir			= dirname(__FILE__);
+$absolutedir			= dirname(dirname(dirname(__FILE__)));
+
+ 
 $dir					= '/uploads/';
 $serverdir				= $absolutedir.$dir;
 $filename				= array();
