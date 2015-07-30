@@ -36,8 +36,10 @@
                                 <div class="col-xs-4">
 
                                    
+
+                                    
 <div class="dropzone" data-width="200" data-height="200" data-resize="true" data-ghost="false"  data-ajax="false" style="width: 100%;">
-  <input type="file" name="thumb" />
+   <input id="profile_picture" type="file" name="profile_pic" />
 </div>
  
                                 </div>

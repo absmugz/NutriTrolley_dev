@@ -69,6 +69,8 @@ class Membership extends CI_Controller {
             $this->load->view('includes/template', $data);
         }*/
         
+
+        
 $username = $this->input->post('username');
 $password = $this->input->post('password');
 $email = $this->input->post('your_email');
@@ -83,11 +85,12 @@ $group = array('2'); // Sets user to admin. No need for array('1', '2') as user 
 if ($this->ion_auth->register($username, $password, $email, $additional_data, $group))
 {
     $messages = $this->ion_auth->messages();
-    $user = $this->ion_auth->user()->row();
-    $user_id = $user->id;
+    //$user = $this->ion_auth->user()->row();
+    //$user_id = $user->id;
     //echo $messages;
     //var_dump($messages);die();
-    var_dump($user_id);die();
+    //var_dump($user_id);die();
+    var_dump($messages);
 }
 else
 {
@@ -95,6 +98,42 @@ else
     //echo $errors;
      var_dump($errors);die();
 }
+
+//profile image crop code starts here
+        
+$error					= false;
+
+$absolutedir			= dirname(dirname(dirname(__FILE__)));
+
+ 
+$dir					= '/uploads/';
+$serverdir				= $absolutedir.$dir;
+$filename				= array();
+
+$json				= json_decode($this->input->post('profile_pic_values'));
+$tmp					= explode(',',$json->data);
+$imgdata 				= base64_decode($tmp[1]);
+	
+$extensiontempvar = explode('.',$json->name);
+$extension				= strtolower(end($extensiontempvar));
+$fname					= substr($json->name,0,-(strlen($extension) + 1)).'.'.substr(sha1(time()),0,6).'.'.$extension;
+	
+	
+$handle					= fopen($serverdir.$fname,'w');
+fwrite($handle, $imgdata);
+fclose($handle);
+	
+$filename[]				= $fname;
+
+
+$this->load->model('User_profile_picture_model', 'thumbnailcrop');
+
+$this->thumbnailcrop->insert(array(
+    'profile_picture' => $fname
+    //,'user_id' => $userid
+));
+
+//profile image crop ends here
 
 //$user = $this->ion_auth->user()->row();
 //$user_id = $user->id;
