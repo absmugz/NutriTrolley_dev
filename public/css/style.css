@@ -383,7 +383,9 @@ table.table.table-striped tbody tr td div.checkbox {
   width:5%;
 }
 
-
+.dropzone.smalltext::before, .dropzone.smalltext::after {
+    font-size: 15px !important;
+}
 
 
 
