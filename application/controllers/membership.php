@@ -85,13 +85,16 @@ $group = array('2'); // Sets user to admin. No need for array('1', '2') as user 
 if ($this->ion_auth->register($username, $password, $email, $additional_data, $group))
 {
     $messages = $this->ion_auth->messages();
-    $user = $this->ion_auth->user()->row();
-    $user_id = $user->id;
+    //$user = $this->ion_auth->user()->row();
+	$id = $this->ion_auth->user()->row();
+    //$user_id = $user->id;
+                       
+                      
     //echo $messages;
     //var_dump($messages);die();
     //var_dump($user_id);die();
     var_dump($messages);
-    var_dump($user_id);die();
+    var_dump($id);die();
 }
 else
 {
