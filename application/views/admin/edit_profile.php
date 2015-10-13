@@ -3,14 +3,17 @@
 
 <?php var_dump($user); ?>
 <?php var_dump($thumbnail); ?>
+<?php echo base_url() . 'uploads/' . $thumbnail->profile_picture; ?>
 
   
 
 <div class="container" style="margin-top:60px;">
     <div class="row">
         <div class="col-xs-4">
-                               <div class="dropzone" data-width="200" data-height="200" data-resize="true" data-ghost="false"  data-ajax="false" style="width: 100%;">
+                               <div data-image="<?php echo base_url() . 'uploads/' . $thumbnail->profile_picture; ?>" class="dropzone" data-width="200" data-height="200" data-resize="true" data-ghost="false"  data-ajax="false" style="width: 100%;">
    <input id="profile_picture" type="file" name="profile_pic" />
+   
+   
 </div>
                             </div>
         <div class="col-lg-4 col-lg-offset-4">
