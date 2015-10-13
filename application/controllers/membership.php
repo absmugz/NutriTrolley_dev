@@ -80,29 +80,19 @@ $email = $this->input->post('your_email');
 								);
 $group = array('2'); // Sets user to admin. No need for array('1', '2') as user is always set to member by default
 
-//$this->ion_auth->register($username, $password, $email, $additional_data, $group);
+$id = $this->ion_auth->register($username, $password, $email, $additional_data, $group);
 
-if ($this->ion_auth->register($username, $password, $email, $additional_data, $group))
+if ($id)
 {
     $messages = $this->ion_auth->messages();
-    //$user = $this->ion_auth->user()->row();
-	$id = $this->ion_auth->user()->row();
-    //$user_id = $user->id;
-                       
+    $user = $this->ion_auth->user($id)->row();
+    
+    $user_id = $user->id;
                       
     //echo $messages;
     //var_dump($messages);die();
     //var_dump($user_id);die();
-    var_dump($messages);
-    var_dump($id);die();
-}
-else
-{
-    $errors = $this->ion_auth->errors();
-    //echo $errors;
-     var_dump($errors);die();
-}
-
+    
 //profile image crop code starts here
         
 $error					= false;
@@ -133,31 +123,24 @@ $filename[]				= $fname;
 $this->load->model('User_profile_picture_model', 'thumbnailcrop');
 
 $this->thumbnailcrop->insert(array(
-    'profile_picture' => $fname
-    //,'user_id' => $userid
+    'profile_picture' => $fname,
+    'id' => $user_id
 ));
 
 //profile image crop ends here
 
-//$user = $this->ion_auth->user()->row();
-//$user_id = $user->id;
+    //var_dump($messages);
+    //var_dump($user_id);die();
+    //var_dump($id);
+}
+else
+{
+    $errors = $this->ion_auth->errors();
+    //echo $errors;
+     //var_dump($errors);die();
+}
 
-//$id = $this->ion_auth->register($username, $password, $email, $additional_data, $group);
 
-//var_dump($user_id);die();
-
-                
-       $data = array(
-                //'profile_picture' => @$this->profile_picture,
-                'first_name' => set_value('first_name'),
-                'surname' => set_value('surname'),
-                'username' => set_value('username'),
-                'password' => set_value('password'),
-                //'password_confirmation' => set_value('password_confirmation'),
-                'your_email' => set_value('your_email')
-            );
-
-            $this->session->set_userdata($data);
 
             
 
@@ -166,7 +149,9 @@ $this->thumbnailcrop->insert(array(
             //loads the second form
             $data['main_content'] = 'membership/step_2';
             $this->load->view('includes/template', $data); 
-    }
+}
+    
+    
     
     
     
