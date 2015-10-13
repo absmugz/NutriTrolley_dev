@@ -7,6 +7,7 @@ class User extends MY_Controller {
     function __construct() {
         parent::__construct();
         $this->load->library('ion_auth');
+        $this->load->model('User_profile_picture_model', 'thumbnailcrop');
         
     }
 
@@ -43,13 +44,18 @@ class User extends MY_Controller {
     public function profile() {
         $user = $this->ion_auth->user()->row();
         //print_r($user);
+        //var_dump($user);die();
+        $thumnailId = ($user->id);
         $this->data['user'] = $user;
+        $this->data['thumbnail'] = $this->thumbnailcrop->get($thumnailId);
+        //var_dump($this->thumbnailcrop->get($thumnailId));die();
         //var_dump($user);
         $this->load->library('form_validation');
         $this->form_validation->set_rules('first_name', 'First name', 'trim');
         $this->form_validation->set_rules('last_name', 'Last name', 'trim');
         $this->form_validation->set_rules('company', 'Company', 'trim');
         $this->form_validation->set_rules('phone', 'Phone', 'trim');
+        //$this->thumbnailcrop->get(1);
 
         if ($this->form_validation->run() === FALSE) {
 

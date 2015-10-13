@@ -1,7 +1,18 @@
+<?php $this->load->view('includes/header'); ?>
 <?php defined('BASEPATH') OR exit('No direct script access allowed'); ?>
+
 <?php var_dump($user); ?>
+<?php var_dump($thumbnail); ?>
+
+  
+
 <div class="container" style="margin-top:60px;">
     <div class="row">
+        <div class="col-xs-4">
+                               <div class="dropzone" data-width="200" data-height="200" data-resize="true" data-ghost="false"  data-ajax="false" style="width: 100%;">
+   <input id="profile_picture" type="file" name="profile_pic" />
+</div>
+                            </div>
         <div class="col-lg-4 col-lg-offset-4">
             <h1>Profile page</h1>
             <?php echo form_open('', array('class' => 'form-horizontal')); ?>
@@ -67,3 +78,4 @@
     </div>
 </div>
 
+<?php $this->load->view('includes/footer'); ?>
